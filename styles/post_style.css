@@ -1,0 +1,337 @@
+body {
+    font-family: 'Cinzel Decorative', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Blog Post Styles */
+
+.blog-post {
+    max-width: 800px;
+    margin: 20px auto;
+    /* Added margin-top for separation from navigation bar */
+    padding: 20px;
+    /* border: 1px solid #ccc;
+        border-radius: 10px; */
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    background-color: #fff;
+    /* Added background color for better readability */
+}
+
+.blog-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.blog-category {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.blog-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.blog-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+/* Reader Comments and Quote Section */
+
+.comments-quote-section {
+    background: #ffffff;
+    /* Light gray background */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.messages-slider {
+    display: flex;
+    overflow-x: auto;
+    justify-content: center;
+}
+
+.message {
+    background: #fff;
+    /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    min-width: 300px;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.message:hover {
+    pointer-events: none;
+    /*transform: translateY(-5px); /* Add a slight lift on hover */
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
+}
+
+.message p {
+    font-size: 1.2rem;
+    /* Increased font size for better readability */
+    line-height: 1.6;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+}
+
+.message::before,
+.message::after {
+    content: "\201C";
+    /* Left double quotation mark */
+    font-size: 2rem;
+    color: #d72638;
+    /* Reddish accent color */
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.message::after {
+    content: "\201D";
+    /* Right double quotation mark */
+}
+
+
+/* Next Post Section */
+
+.next-posts {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    position: relative;
+}
+
+.next-post {
+    position: relative;
+    width: 45%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.next-post-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /* Adjust the max height as needed */
+    overflow: hidden;
+}
+
+.next-post-image {
+    width: auto;
+    height: 100%;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.next-post:hover .next-post-image {
+    transform: scale(1.1);
+}
+
+.next-post-content {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.next-post-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.next-post-excerpt {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.next-post a {
+    display: block;
+    /* Make anchor tag a block element */
+    text-decoration: none;
+    /* Remove default link styling */
+    color: inherit;
+    /* Inherit color from parent element */
+}
+
+
+/* Navigation Buttons */
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.nav-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #007BFF;
+    transform: scale(1.05);
+}
+
+
+/* Responsive Styles */
+
+@media (max-width: 540px) {
+    .next-posts {
+        flex-direction: column;
+    }
+    .next-post {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .post-navigation {
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-button {
+        width: 48%;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .message {
+        flex: 1 1 calc(50% - 20px);
+        /* 2 columns with space */
+    }
+}
+
+@media (max-width: 768px) {
+    .message {
+        flex: 1 1 calc(100% - 20px);
+        /* 1 column with space */
+        margin-bottom: 20px;
+        /* Space between rows */
+    }
+    .message p {
+        font-size: 1rem;
+        /* Adjust font size for smaller screens */
+    }
+    .message::before,
+    .message::after {
+        font-size: 1.5rem;
+        /* Adjust quote size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .message p {
+        font-size: 0.9rem;
+        /* Further adjust font size for very small screens */
+    }
+    .message::before,
+    .message::after {
+        font-size: 1.2rem;
+        /* Further adjust quote size for very small screens */
+    }
+    .messages-slider {
+        padding: 0 10px;
+        /* Adjust padding for smaller screens */
+    }
+}
+
+.book_link {
+    font-family: inherit;
+    /* Use the same font as the surrounding text */
+    font-weight: bold;
+    /* Make the link text bold */
+    color: #3498db;
+    /* A distinct yet pleasant color */
+    text-decoration: none;
+    /* Remove the underline */
+    border-bottom: 1px solid #3498db;
+    /* Underline effect with border */
+    transition: all 0.2s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.book_link:hover {
+    color: #2980b9;
+    /* Darker shade on hover */
+    border-bottom: 1px solid #2980b9;
+    /* Consistent underline color on hover */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+.book_link {
+    font-family: inherit;
+    /* Use the same font as the surrounding text */
+    font-weight: bold;
+    /* Make the link text bold */
+    color: inherit;
+    /* Use the same color as the surrounding text */
+    text-decoration: none;
+    /* Remove the underline */
+    border-bottom: none;
+    /* Remove any underline effect */
+    transition: all 0.2s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+.book_link:hover {
+    color: #555;
+    /* Slightly darker shade on hover for subtle effect */
+    cursor: pointer;
+    text-decoration: none;
+    /* Pointer cursor on hover */
+}
+
+.book-list {
+    list-style-type: disc;
+    /* Use default bullets */
+    padding-left: 20px;
+    /* Add padding to position bullets */
+}
+
+.book-list li {
+    margin-bottom: 5px;
+    /* Add some space between list items */
+}
