@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="styles/all_book.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div data-include=" nav.html"></div>
+
+
+    <!-- Search bar section -->
+
+    <div class="search-container">
+        <div class="post-section">
+            <div class="post">
+                <img src="images/post1.jpg" alt="Post Image" class="post-image">
+            </div>
+        </div>
+
+        <div class="search-section">
+            <h2 class="section-title">Let's get started with this!</h2>
+            <div class="category-description">
+                <p class="category-description-text">Explore all Books..</p>
+            </div>
+            <div class="search-area">
+                <select class="category-selector">
+                    <option value="all">All Categories</option>
+                    <option value="novel">Novel</option>
+                    <option value="finance">Finance</option>
+                    <option value="science">Science</option>
+                    <option value="other">Other</option>
+                    
+                </select>
+                <input type="text" class="search-input" placeholder="Type to search...">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Search result section -->
+    <div class="results-container">
+        <h3>Search Results</h3>
+        <div class="results-list">
+            <!-- Results will be dynamically inserted here -->
+        </div>
+    </div>
+
+
+
+</body>
+<div data-include=" footer.html"></div>
+<script src=" partials/include.js"></script>
+<script src="scripts/all_book.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

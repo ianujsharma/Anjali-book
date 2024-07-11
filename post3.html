@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="styles/post_style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div data-include=" nav.html"></div>
+
+
+    <!-- Blog Post -->
+    <div class="blog-post">
+        <h1 class="blog-title">Answering Why?</h1>
+        <h3 class="blog-category">Finance</h3>
+        <img src="images/post3.jpg" alt="Blog Image" class="blog-image">
+        <p class="blog-text">
+            This is the topics which truly caught/got my attention, now-a-days. This is I say, is the field, which always clear each of your doubt, by not answering, but providing tools and perspective, required.
+        </p>
+        <p class="blog-text">
+            Its not only physics, mathematics, chemistry, anatomy, aerospace etc. it's scopes, spans to every question including the stupdiest one, like why is moon following me?, how this google even can understand me what I want? etc.
+        </p>
+        <p class="blog-text">
+            I say should, like once go through these:</p>
+
+        <ul id="#b" class="book-list">
+            <li><a href="books/science/Bate, Mueller, and White - Fundamentals of Astrodynamics.pdf" class="book_link">Fundamental of Astrodynamics</a></li>
+            <li><a href="books/science/Classical-Dynamics-of-Particles-and-Systems.pdf" class="book_link">Classical Dynamics</a></li>
+            <li><a href="books/science/Computational Fluid Dynamics - Principles and Applications - J. Blazek.pdf" class="book_link">Fluid Dynamics</a></li>
+            <li><a href="books/science/Fundamentals-of-aerodynamics-6-Edition.pdf" class="book_link">AeroDynamics</a></li>
+            <li><a href="books/science/particle physics .pdf" class="book_link">ParticlePhysics (#)</a></li>
+            <li><a href="books/science/Kevin_Mitnick_-_The_Art_of_Deception.pdf" class="book_link">Art of Deception</a></li>
+            <li><a href="books/science/x64_cheatsheet.pdf" class="book_link">X64 Cheatsheet (this is for fun)</a></li>
+        </ul>
+
+        <p class="blog-text">
+            For Physic I would go with Walter Lewin (MIT), they are like roller coaster ride, exciting , exciting ,exciting, boring, interesting, interesting, boring.... but Great, to learn with no prior experience. (MORE)
+        </p>
+    </div>
+
+
+    <!-- Reader Comments and Quote Section -->
+    <section class="comments-quote-section">
+        <div class="container">
+            <div class="comments">
+                <h2>Note</h2>
+                <div class="messages-slider">
+                    <div class="message">
+                        <p>Why chemical engineers aren't allowed to play anymore :(</p>
+                    </div>
+                    <div class="message">
+                        <p>"Blunt pencil are really pointless"</p>
+                    </div>
+                    <div class="message">
+                        <p>"Let's fly to the moon!"</p>
+                    </div>
+                    <div class="message">
+                        <p>"Remeber If there is no Hypothetical question!"</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Next post section -->
+    <div class="next-posts">
+
+        <div class="next-post">
+
+            <div class="next-post-image-container">
+                <a href="post2.1.html"><img src=" images/blog-image.jpg" alt="Past Post" class="next-post-image">
+                </a>
+            </div>
+            <div class="next-post-content">
+                <h2 class="next-post-title">Finance-Academic</h2>
+                <p class="next-post-excerpt">Where everybody counts...</p>
+            </div>
+
+        </div>
+
+        <div class="next-post">
+            <div class="next-post-image-container">
+                <a href="post4.html">
+                    <img src=" images/post2.jpg" alt="Future Post" class="next-post-image">
+                </a>
+            </div>
+            <div class="next-post-content">
+                <h2 class="next-post-title">Fiction/Fantasy</h2>
+                <p class="next-post-excerpt">Experience the new realm......</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Navigation buttons -->
+    <div class="post-navigation">
+        <button class="nav-button" onclick="navigateToPrevious()">Previous Post</button>
+        <button class="nav-button" onclick="navigateToNext()">Next Post</button>
+    </div>
+
+
+
+
+</body>
+<div data-include="footer.html"></div>
+<script src="partials/include.js"></script>
+
+
+<script>
+    function navigateToPrevious() {
+        // Replace with the URL of the previous post
+        window.location.href = 'post2.1.html';
+    }
+
+    function navigateToNext() {
+        // Replace with the URL of the next post
+        window.location.href = "post4.html";
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const messages = document.querySelectorAll('.message');
+        let index = 0;
+
+        function showmessage(i) {
+            messages.forEach((message, idx) => {
+                message.style.display = idx === i ? 'block' : 'none';
+            });
+        }
+
+        function nextmessage() {
+            index = (index + 1) % messages.length;
+            showmessage(index);
+        }
+
+        setInterval(nextmessage, 5000); // Change message every 5 seconds
+        showmessage(index); // Show the first message initially
+    });
+</script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <div data-include="nav.html"></div>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0 order-lg-1 text-center text-lg-left">
+                    <img src="images/profile.jpg" class="img-fluid rounded-circle" alt="Profile Picture">
+                </div>
+                <div class="col-lg-6 order-lg-2">
+                    <h2 class="section-title">About</h2>
+                    <p class="about-text">
+                        I have created this to make it easier for you to read and learn. As you have told that, you aren't in reading, I have designed this in a way, so to make it easier for you to navigate and also added sample (full text), so if even you thought of getting
+                        some, you can more decisive (I say)
+                    </p>
+                    <p class="about-text">
+                        Even though, this project is hectic yet it was fun building this site, I hope you will find it helpful, even though there lots of things, which requires change, like making mroe interactive, appealing with immersiveness,but why not procastinate. And lastlyy,
+                        it's not free, and as I have provided you this in return you have to recommend me, like lots of like that much of movies and series, whom I can binge after september.
+                    </p>
+                    <p class="about-text">
+
+                    </p>
+                    <p class="signature-text">Anuj</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="featured-post">
+        <div class="container">
+            <h2 class="section-title">Faviorate</h2>
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <div class="featured-post-item">
+                        <img src="images/post1.jpg" class="img-fluid" alt="Featured Post Image">
+                        <div class="featured-post-content">
+                            <h3 class="post-title">Novel</h3>
+                            <p class="post-excerpt">Most are just recommendations, even to me and, but I am damm sure, they are like perfect one, in whichever genre they are. </p>
+                            <a href="post1.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="featured-post-item">
+                        <img src="images/post2.jpg" class="img-fluid" alt="Featured Post Image">
+                        <div class="featured-post-content">
+                            <h3 class="post-title">Finance</h3>
+                            <p class="post-excerpt">Fond of this, as it cover literally everything including, mathematics, science, law, politics and more , and not just mere theory, their application as well.</p>
+                            <a href="post2.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="get-in-touch">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="about-text">
+                Have a question or doubt?<br>I'd love to hear from you! Feel free to reach out and share, what's in your head.
+            </p>
+            <a href="https://instagram.com/ianujsharma__" class="btn btn-primary">Contact</a>
+        </div>
+    </section>
+
+
+
+    <div data-include="footer.html"></div>
+    <script src="partials/include.js"></script>
+
+
+    <style>
+        /* General Styles */
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        h2.section-title,
+        h3.post-title {
+            font-family: 'Dancing script', cursive;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        h3.post-title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .about-text,
+        .post-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        /*styling for hero section */
+        
+        .hero-section {
+            padding: 60px 0;
+            color: #faf3f9;
+            /* Light background for contrast */
+        }
+        
+        .hero-section .row>.col-lg-4 {
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-section .hero-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            /* Remove rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Minimalist shadow */
+        }
+        
+        .hero-section .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section .about-text {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .hero-section .container {
+            text-align: center;
+        }
+        
+        .signature-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 10px;
+        }
+        /* For tablet view: maintaining side picture and text on right */
+        
+        @media (min-width: 750px) and (max-width: 991px) {
+            .hero-section .row {
+                flex-direction: row;
+            }
+            .hero-section .col-lg-4 {
+                flex: 0 0 40%;
+                max-width: 40%;
+                text-align: left;
+            }
+            .hero-section .col-lg-4 img {
+                width: 100%;
+                max-width: 200px;
+                margin: 0 auto;
+                display: block;
+            }
+            .hero-section .col-lg-6 {
+                flex: 0 0 60%;
+                max-width: 60%;
+                text-align: left;
+            }
+            .hero-section .col-lg-6 .section-title {
+                text-align: left;
+            }
+        }
+        /* For smaller screens: centered image with text below */
+        
+        @media (max-width: 750px) {
+            .hero-section .row {
+                flex-direction: column;
+            }
+            .hero-section .col-lg-4,
+            .hero-section .col-lg-6 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .hero-section .col-lg-4 img {
+                width: 70%;
+                max-width: 300px;
+                margin: 0 auto 20px;
+                display: block;
+            }
+            .hero-section .col-lg-6 {
+                text-align: center;
+            }
+        }
+        /* Featured Post Styles */
+        
+        .featured-post {
+            padding: 40px 0;
+            background-color: #fff;
+        }
+        
+        .featured-post .section-title {
+            margin-bottom: 7%;
+            text-align: center;
+            font-family: 'Dancing script', cursive;
+            font-size: 2.5rem;
+            color: #333;
+            border-top: 1px solid #ccc;
+            padding-top: 10%;
+            padding-bottom: 10px;
+        }
+        
+        .featured-post .featured-post-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-post img {
+            max-width: 100%;
+            max-height: 300px;
+            height: auto;
+            display: block;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .featured-post .featured-post-content {
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        .featured-post .post-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .featured-post .post-excerpt {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .featured-post .btn-primary {
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .featured-post .btn-primary:hover {
+            background-color: #483d8b;
+        }
+        /* Get in Touch Section */
+        
+        .get-in-touch {
+            padding: 60px 0;
+            background-color: #fff;
+            text-align: center;
+            padding-bottom: 10%;
+        }
+        
+        .get-in-touch .section-title {
+            border-top: 1px solid #ccc;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            padding-top: 10%;
+        }
+        
+        .get-in-touch .about-text {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            /* Reduce margin bottom for better spacing */
+            white-space: normal;
+            /* Ensure the text wraps to multiple lines */
+            text-align: center;
+            /* Center the text */
+        }
+        /* Button Styles */
+        
+        .btn {
+            display: inline-block;
+            font-size: 16px;
+            color: #fff;
+            background-color: #6c5ce7;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #483d8b;
+        }
+        /* Responsive Font Adjustments */
+        
+        @media (max-width: 991px) {
+            h2.section-title {
+                font-size: 2rem;
+            }
+            h3.post-title {
+                font-size: 1.6rem;
+            }
+            .about-text,
+            .post-excerpt {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 750px) {
+            .btn {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Ensure the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to animate elements on scroll
+            function animateOnScroll(selector, animationClass) {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(function(element) {
+                    element.style.opacity = 0;
+                    element.style.transform = "translateY(50px)";
+                    element.style.transition = "opacity 1s ease, transform 1s ease";
+
+                    let elementPosition = element.getBoundingClientRect().top;
+                    let screenPosition = window.innerHeight;
+
+                    window.addEventListener('scroll', function() {
+                        let scrollPosition = window.scrollY;
+
+                        if (scrollPosition > elementPosition - screenPosition + 100) {
+                            element.classList.add(animationClass);
+                            element.style.opacity = 1;
+                            element.style.transform = "translateY(0)";
+                        } else {
+                            element.style.opacity = 0;
+                            element.style.transform = "translateY(50px)";
+                        }
+                    });
+                });
+            }
+
+
+            animateOnScroll('.get-in-touch .section-title', 'animated');
+            animateOnScroll('.get-in-touch .about-text', 'animated');
+            animateOnScroll('.get-in-touch .btn', 'animated');
+        })
+    </script>
+    <style>
+        .animated {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+    </style>
+</body>
+
+</html>

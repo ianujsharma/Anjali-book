@@ -1,0 +1,181 @@
+<!-- Footer -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.jpg" alt="Logo">
+                <p>What interests you?</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="allBook.html">Book</a></li>
+                    <li><a href="me.html">Me</a></li>
+                    <!-- <li><a href="other.html">Other</a></li> -->
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Social</h4>
+                <ul>
+                    <!-- <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>-->
+                    <li><a href="https://www.threads.net/@moond_anjali"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://instagram.com/moond_anjali"><i class="fab fa-instagram"></i></a></li>
+                    <!-- <li><a href="#"><i class="fab fa-pinterest"></i></a></li> -->
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Miss Anjali. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script>
+    // Handle form submission
+    const form = document.querySelector(".newsletter-form");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Redirect to the thank you page
+        window.location.href = "thankyou.html";
+    });
+</script>
+<style>
+    /* Footer */
+    
+    .site-footer {
+        background-color: #fbfdfc;
+        padding: 50px 0;
+        color: #333;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .site-footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    
+    .footer-logo img {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-logo p {
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .footer-nav,
+    .footer-social,
+    .footer-newsletter {
+        flex: 1;
+        margin: 10px;
+    }
+    
+    .footer-nav h4,
+    .footer-social h4,
+    .footer-newsletter h4 {
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: #d72638;
+    }
+    
+    .footer-nav ul,
+    .footer-social ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-nav ul li,
+    .footer-social ul li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-nav ul li a,
+    .footer-social ul li a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-nav ul li a:hover,
+    .footer-social ul li a:hover {
+        color: #d72638;
+    }
+    
+    .footer-social ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    
+    .footer-social ul li a {
+        font-size: 20px;
+    }
+    
+    .footer-newsletter input[type="email"] {
+        padding: 10px;
+        width: 70%;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-family: 'Great Vibes', cursive;
+        /* Example of a script font */
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .footer-newsletter button {
+        margin-top: 2%;
+        padding: 10px 20px;
+        border: none;
+        background-color: #fbfdfc;
+        color: rgb(25, 23, 23);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        align-self: center;
+    }
+    
+    .footer-newsletter button:hover {
+        background-color: #b21f31;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer-nav,
+        .footer-social,
+        .footer-newsletter {
+            margin: 20px 0;
+        }
+        .footer-newsletter input[type="email"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+</style>

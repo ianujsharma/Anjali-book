@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>-</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div data-include="nav.html"></div>
+
+
+    <!-- Blog Post -->
+    <div class="blog-post">
+        <h1 class="blog-title">Journey</h1>
+        <h3 class="blog-category">-</h3>
+        <img src="images/blog-image.jpg" alt="Blog Image" class="blog-image">
+        <p class="blog-text">
+
+        </p>
+        <p class="blog-text">
+            I am kind of excited, and same time nervous, to showcase this website, as its'
+            like half baked... as I'm not entirely acquainted with your preferences--thoughts--and such... and so
+            so, I tried to just stick with minimalist design, and I hope you'll find this whole site 
+            helpful and beneficial.
+        </p>
+        <p class="blog-text">
+            And listen, "agr" tum koi bhi book shuru kro section 1 se, toh mujhe bhi bata dena... theek!(from section 1)
+        </p>
+    </div>
+
+
+    <!-- Reader Comments and Quote Section -->
+    <section class="comments-quote-section">
+        <div class="container">
+            <div class="comments">
+                <h2>What Readers Say</h2>
+                <div class="messages-slider">
+                    <div class="message">
+                        <p>"Adam & Eve were the first ones to ignore the Apple terms and conditions"</p>
+                    </div>
+                    <div class="message">
+                        <p>"That's cute!"</p>
+                    </div>
+                    <div class="message">
+                        <p>"I have a stepladder because my real ladder left when I was 5"</p>
+                    </div>
+                    <div class="message">
+                        <p>
+                            "You are not completely useless. You can always be used as a bad example"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Next post section -->
+    <div class="next-posts">
+
+        <div class="next-post">
+            <a href="post1.html">
+                <div class="next-post-image-container">
+                    <img src="images/post1.jpg" alt="Future Post" class="next-post-image">
+                </div>
+                <div class="next-post-content">
+                    <h2 class="next-post-title">Novel</h2>
+                    <p class="next-post-excerpt">Reading is a Novel Idea..</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Navigation buttons -->
+    <div class="post-navigation">
+        <button class="nav-button" onclick="navigateToNext()">Next Post</button>
+    </div>
+
+
+
+
+</body>
+<div data-include=" footer.html"></div>
+<script src=" partials/include.js"></script>
+
+
+<style>
+    /* Global Styles */
+    
+    body {
+        font-family: 'Cinzel Decorative', cursive;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    /* Blog Post Styles */
+    
+    .blog-post {
+        max-width: 800px;
+        margin: 20px auto;
+        /* Added margin-top for separation from navigation bar */
+        padding: 20px;
+        /* border: 1px solid #ccc;
+      border-radius: 10px; */
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+        background-color: #fff;
+        /* Added background color for better readability */
+    }
+    
+    .blog-title {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .blog-category {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .blog-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .blog-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    /* Reader Comments and Quote Section */
+    
+    .comments-quote-section {
+        background: #ffffff;
+        /* Light gray background */
+        padding: 50px 0;
+        text-align: center;
+    }
+    
+    .messages-slider {
+        display: flex;
+        overflow-x: auto;
+        justify-content: center;
+    }
+    
+    .message {
+        background: #fff;
+        /* White background */
+        padding: 20px;
+        border-radius: 10px;
+        margin-right: 20px;
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+        min-width: 300px;
+        max-width: 100%;
+        transition: transform 0.3s ease;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+    }
+    
+    .message:hover {
+        pointer-events: none;
+        /*transform: translateY(-5px); /* Add a slight lift on hover */
+        /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
+    }
+    
+    .message p {
+        font-size: 1.2rem;
+        /* Increased font size for better readability */
+        line-height: 1.6;
+        font-family: 'Raleway', sans-serif;
+        color: #333;
+    }
+    
+    .message::before,
+    .message::after {
+        content: "\201C";
+        /* Left double quotation mark */
+        font-size: 2rem;
+        color: #d72638;
+        /* Reddish accent color */
+        opacity: 0.7;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .message::after {
+        content: "\201D";
+        /* Right double quotation mark */
+    }
+    
+    @media (max-width: 768px) {
+        .messages-slider {
+            flex-wrap: wrap;
+        }
+        .message {
+            flex: 1 1 100%;
+            margin-bottom: 20px;
+        }
+    }
+    
+    @media (max-width: 270px) {
+        .messages-slider .message {
+            flex: wrap;
+        }
+        .messages-slider {
+            flex: auto;
+        }
+    }
+    /* Next Post Section */
+    
+    .next-posts {
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem;
+        position: relative;
+    }
+    
+    .next-post {
+        position: relative;
+        width: 45%;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    
+    .next-post-image-container {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        /* Adjust the max height as needed */
+        overflow: hidden;
+    }
+    
+    .next-post-image {
+        width: auto;
+        height: 100%;
+        transition: transform 0.3s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    .next-post:hover .next-post-image {
+        transform: scale(1.1);
+    }
+    
+    .next-post a {
+        display: block;
+        /* Make anchor tag a block element */
+        text-decoration: none;
+        /* Remove default link styling */
+        color: inherit;
+        /* Inherit color from parent element */
+    }
+    
+    .next-post-content {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .next-post-title {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    
+    .next-post-excerpt {
+        font-size: 1rem;
+        margin: 0;
+    }
+    /* Navigation Buttons */
+    
+    .post-navigation {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+    
+    .nav-button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .nav-button:hover {
+        background-color: #007BFF;
+        transform: scale(1.05);
+    }
+    /* Responsive Styles */
+    
+    @media (max-width: 540px) {
+        .next-posts {
+            flex-direction: column;
+        }
+        .next-post {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .post-navigation {
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav-button {
+            width: 48%;
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+    }
+    
+    @media (max-width: 1024px) {
+        .message {
+            flex: 1 1 calc(50% - 20px);
+            /* 2 columns with space */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .message {
+            flex: 1 1 calc(100% - 20px);
+            /* 1 column with space */
+            margin-bottom: 20px;
+            /* Space between rows */
+        }
+        .message p {
+            font-size: 1rem;
+            /* Adjust font size for smaller screens */
+        }
+        .message::before,
+        .message::after {
+            font-size: 1.5rem;
+            /* Adjust quote size for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .message p {
+            font-size: 0.9rem;
+            /* Further adjust font size for very small screens */
+        }
+        .message::before,
+        .message::after {
+            font-size: 1.2rem;
+            /* Further adjust quote size for very small screens */
+        }
+        .messages-slider {
+            padding: 0 10px;
+            /* Adjust padding for smaller screens */
+        }
+    }
+</style>
+<script>
+    function navigateToNext() {
+        // Replace with the URL of the next post
+        window.location.href = 'post1.html';
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const messages = document.querySelectorAll('.message');
+        let index = 0;
+
+        function showmessage(i) {
+            messages.forEach((message, idx) => {
+                message.style.display = idx === i ? 'block' : 'none';
+            });
+        }
+
+        function nextmessage() {
+            index = (index + 1) % messages.length;
+            showmessage(index);
+        }
+
+        setInterval(nextmessage, 5000); // Change message every 5 seconds
+        showmessage(index); // Show the first message initially
+    });
+</script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

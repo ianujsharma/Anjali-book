@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="styles/post_style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div data-include=" nav.html"></div>
+
+
+    <!-- Blog Post -->
+    <div class="blog-post">
+        <h1 class="blog-title">Let's dive deep-me!</h1>
+        <h3 class="blog-category">Novel</h3>
+        <img src="images/post1.jpg" alt="Blog Image" class="blog-image">
+        <p class="blog-text">
+            So you have seen what's people around me currently into. But I am more slow paced, and more selective, what I do and read. So this page contain , book or series, I prefer, and hopefully you will too.
+        </p>
+        <p class="blog-text">
+            which are:</p>
+
+        <ul id="#b" class="book-list">
+            <li>
+                <a href="books/NOVEL/A Song of Ice and Fire (Martin, George Raymond Richard).epub" class="book_link">A Song of Ice and Fire (Martin, George Raymond Richard)</a>
+                <a href="books/NOVEL/Harry Potter Series Book 1-7 ( etc.) .epub" class="book_link">Harry Potter Series</a>
+                <a href="books/NOVEL/The Fifty Shades Trilogy  Grey (E L James [James, E L]) .epub" class="book_link">The Fifty Shades Trilogy  Grey (E L James) </a>
+                <a href="books/NOVEL/Freed (James, E L).epub" class="book_link">Freed (James, E L) (#)</a>
+                <a href="books/NOVEL/Sherlock Holmes. Illustrated (Arthur Conan Sir Doyle).epub" class="book_link">Sherlock Holmes (Arthur Conan Sir Doyle) (#)</a>
+                <!-- <a href="#b" class="book_link">Daddys Little Girl Bred by My Daddy 3 (erotica)</a> -->
+            </li>
+        </ul>
+
+    </div>
+
+
+    <!-- Reader Comments and Quote Section -->
+    <section class="comments-quote-section">
+        <div class="container">
+            <div class="comments">
+                <h2>Note</h2>
+                <div class="messages-slider">
+                    <div class="message">
+                        <p>"Let's try something new"</p>
+                    </div>
+                    <div class="message">
+                        <p>In book a whole chapter, in movie just 3 minutes, jezz!</p>
+                    </div>
+                    <div class="message">
+                        <p>"The chracters were too Austentatious"</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Next post section -->
+    <div class="next-posts">
+
+        <div class="next-post">
+
+            <div class="next-post-image-container">
+                <a href="post1.html"><img src=" images/blog-image.jpg" alt="Past Post" class="next-post-image">
+                </a>
+            </div>
+            <div class="next-post-content">
+                <h2 class="next-post-title">Novel</h2>
+                <p class="next-post-excerpt">Reading is a Novel idea...</p>
+            </div>
+
+        </div>
+
+        <div class="next-post">
+            <div class="next-post-image-container">
+                <a href="post2.html">
+                    <img src=" images/post2.jpg" alt="Future Post" class="next-post-image">
+                </a>
+            </div>
+            <div class="next-post-content">
+                <h2 class="next-post-title">Finance</h2>
+                <p class="next-post-excerpt">Diving into a new world...</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Navigation buttons -->
+    <div class="post-navigation">
+        <button class="nav-button" onclick="navigateToPrevious()">Previous Post</button>
+        <button class="nav-button" onclick="navigateToNext()">Next Post</button>
+    </div>
+
+
+
+
+</body>
+<div data-include="footer.html"></div>
+<script src="partials/include.js"></script>
+
+
+<script>
+    function navigateToPrevious() {
+        // Replace with the URL of the previous post
+        window.location.href = 'post1.html';
+    }
+
+    function navigateToNext() {
+        // Replace with the URL of the next post
+        window.location.href = "post2.html";
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const messages = document.querySelectorAll('.message');
+        let index = 0;
+
+        function showmessage(i) {
+            messages.forEach((message, idx) => {
+                message.style.display = idx === i ? 'block' : 'none';
+            });
+        }
+
+        function nextmessage() {
+            index = (index + 1) % messages.length;
+            showmessage(index);
+        }
+
+        setInterval(nextmessage, 5000); // Change message every 5 seconds
+        showmessage(index); // Show the first message initially
+    });
+</script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
