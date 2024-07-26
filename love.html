@@ -169,43 +169,28 @@
             "I’d love for us to be together, don’t you?"
         ];
 
-        function isElementOverlapping(el, rect) {
-            const elemRect = el.getBoundingClientRect();
-            return !(elemRect.right < rect.left ||
-                elemRect.left > rect.right ||
-                elemRect.bottom < rect.top ||
-                elemRect.top > rect.bottom);
+        // Array of predefined positions
+        const predefinedPositions = [
+            { top: '0px', left: '100px' },
+            { top: '100px', left: '200px' },
+            { top: '200px', left: '300px' },
+            { top: '300px', left: '400px' },
+            { top: '400px', left: '500px' },
+        ];
+
+        function getRandomPosition() {
+            const index = Math.floor(Math.random() * predefinedPositions.length);
+            return predefinedPositions[index];
         }
 
         document.getElementById('no-button').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default link behavior
             
             const button = this;
-            const buttonWidth = button.offsetWidth;
-            const buttonHeight = button.offsetHeight;
+            const newPosition = getRandomPosition();
             
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-            
-            let newX, newY;
-
-            do {
-                newX = Math.floor(Math.random() * (viewportWidth - buttonWidth));
-                newY = Math.floor(Math.random() * (viewportHeight - buttonHeight));
-                
-                // Ensure the button stays within the viewport
-                newX = Math.max(0, Math.min(viewportWidth - buttonWidth, newX));
-                newY = Math.max(0, Math.min(viewportHeight - buttonHeight, newY));
-
-            } while (isElementOverlapping(button, {
-                left: newX,
-                top: newY,
-                right: newX + buttonWidth,
-                bottom: newY + buttonHeight
-            }));
-            
-            button.style.left = newX + 'px';
-            button.style.top = newY + 'px';
+            button.style.left = newPosition.left;
+            button.style.top = newPosition.top;
             
             // Show a random no-response message
             const noMessage = noResponses[Math.floor(Math.random() * noResponses.length)];
@@ -234,14 +219,14 @@
             // Hide the no-response message if it was visible
             document.getElementById('no-response-message').style.display = 'none';
 
-            // Hide the old GIF
-            const oldGif = document.querySelector('.tenor-embed img');
-            if (oldGif) oldGif.style.display = 'none';
+            // Hide the initial GIF
+            const initialGif = document.querySelector('.tenor-embed img');
+            if (initialGif) initialGif.style.display = 'none';
         });
 
-        // Show the initial GIF when the page loads
+        // Hide the initial GIF when the page loads
         window.addEventListener('load', function() {
-            document.querySelector('.tenor-embed img').style.display = 'block';
+            document.querySelector('.tenor-embed img').style.display = 'none';
         });
     </script>
 </body>
