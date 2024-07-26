@@ -76,8 +76,7 @@
         .moving-btn {
             position: absolute;
             top: 0;
-            left: 0;
-            margin-left: 15px;
+            left: 100px; /* Align to the right of the Yes button */
         }
 
         .congratulatory-message {
@@ -88,12 +87,13 @@
             text-align: center;
         }
 
-        .tenor-embed img {
+        .tenor-embed img, .gif-display {
             border: none;
             width: 100%;
             height: auto;
             margin-top: 20px;
             border-radius: 10px;
+            display: none; /* Hide initially */
         }
 
         .no-response {
@@ -128,7 +128,7 @@
                 font-size: 1.1em;
             }
 
-            .tenor-embed img {
+            .tenor-embed img, .gif-display {
                 height: 200px;
             }
         }
@@ -140,19 +140,17 @@
         <p>- Anuj's heart is waiting for you</p>
         
         <div class="btn">
-            <div id="no-button" class="moving-btn">No</div>
             <a id="yes-button" href="#">Yes, forever!</a>
+            <div id="no-button" class="moving-btn">No</div>
         </div>
 
         <div class="congratulatory-message" id="congrats-message">
             <p>Yay! You said yes! 🥰</p>
-            <img src="gif2.gif" alt="Celebration GIF">
+            <img src="gif2.gif" alt="Celebration GIF" class="gif-display">
         </div>
 
         <div class="no-response" id="no-response-message">
             <p>No! You can't escape this love! 😠</p>
-            <p>Seriously, I'm not letting you get away!</p>
-            <p>Why not? Because I say so!</p>
         </div>
 
         <div class="tenor-embed">
@@ -160,7 +158,14 @@
         </div>
     </div>
     <script>
-        // JavaScript to handle "No" button movement and "Yes" button action
+        // Array of playful "No" responses
+        const noResponses = [
+            "No! You can't escape this love! 😠",
+            "Seriously, I'm not letting you get away!",
+            "Why not? Because I say so!",
+            "Not happening! 😤",
+            "You can't dodge this love! ❤️"
+        ];
 
         function isElementOverlapping(el, rect) {
             const elemRect = el.getBoundingClientRect();
@@ -190,7 +195,9 @@
             button.style.left = newX + 'px';
             button.style.top = newY + 'px';
             
-            // Show the no-response message
+            // Show a random no-response message
+            const noMessage = noResponses[Math.floor(Math.random() * noResponses.length)];
+            document.getElementById('no-response-message').textContent = noMessage;
             document.getElementById('no-response-message').style.display = 'block';
 
             // Add a bounce effect
@@ -205,14 +212,19 @@
         document.getElementById('yes-button').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default link behavior
             
-            // Show the congratulatory message
+            // Show the congratulatory message and new GIF
             document.getElementById('congrats-message').style.display = 'block';
+            document.querySelector('.gif-display').style.display = 'block';
             
             // Hide the "No" button
             document.getElementById('no-button').style.display = 'none';
 
             // Hide the no-response message if it was visible
             document.getElementById('no-response-message').style.display = 'none';
+
+            // Hide the old GIF
+            const oldGif = document.querySelector('.tenor-embed img');
+            if (oldGif) oldGif.style.display = 'none';
         });
     </script>
 </body>
