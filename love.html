@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff99cc, #ffcc99);
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            max-width: 90%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2.8em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.4em;
+            color: #6c757d;
+            margin-top: 0;
+            margin-bottom: 1.5em;
+        }
+
+        .btn {
+            margin-top: 30px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn a, .moving-btn {
+            text-decoration: none;
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 12px;
+            font-size: 1.4em;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn a {
+            background-color: #007bff;
+        }
+
+        .moving-btn {
+            background-color: #dc3545;
+            cursor: pointer;
+        }
+
+        .btn a:hover, .moving-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .moving-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 15px;
+        }
+
+        .congratulatory-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.4em;
+            color: #28a745;
+            text-align: center;
+        }
+
+        .tenor-embed img {
+            border: none;
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .no-response {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #dc3545;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            .btn a, .moving-btn {
+                padding: 10px 20px;
+                font-size: 1.2em;
+            }
+
+            .moving-btn {
+                top: 10px;
+                left: 10px;
+            }
+
+            .congratulatory-message {
+                font-size: 1.2em;
+            }
+
+            .no-response {
+                font-size: 1.1em;
+            }
+
+            .tenor-embed img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be Mine?</h1>
+        <p>- Anuj's heart is waiting for you</p>
+        
+        <div class="btn">
+            <div id="no-button" class="moving-btn">No</div>
+            <a id="yes-button" href="#">Yes, forever!</a>
+        </div>
+
+        <div class="congratulatory-message" id="congrats-message">
+            <p>Yay! You said yes! 🥰</p>
+            <img src="gif2.gif" alt="Celebration GIF">
+        </div>
+
+        <div class="no-response" id="no-response-message">
+            <p>No! You can't escape this love! 😠</p>
+            <p>Seriously, I'm not letting you get away!</p>
+            <p>Why not? Because I say so!</p>
+        </div>
+
+        <div class="tenor-embed">
+            <img src="gif1.gif" alt="Manja Sticker">
+        </div>
+    </div>
+    <script>
+        // JavaScript to handle "No" button movement and "Yes" button action
+
+        function isElementOverlapping(el, rect) {
+            const elemRect = el.getBoundingClientRect();
+            return !(elemRect.right < rect.left ||
+                elemRect.left > rect.right ||
+                elemRect.bottom < rect.top ||
+                elemRect.top > rect.bottom);
+        }
+
+        document.getElementById('no-button').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            
+            const button = this;
+            const containerRect = button.parentElement.getBoundingClientRect();
+            let newX, newY;
+            
+            do {
+                newX = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+                newY = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+            } while (isElementOverlapping(button, {
+                left: newX,
+                top: newY,
+                right: newX + button.offsetWidth,
+                bottom: newY + button.offsetHeight
+            }));
+            
+            button.style.left = newX + 'px';
+            button.style.top = newY + 'px';
+            
+            // Show the no-response message
+            document.getElementById('no-response-message').style.display = 'block';
+
+            // Add a bounce effect
+            button.style.transform = 'scale(1.1)';
+            setTimeout(() => button.style.transform = 'scale(1)', 200);
+
+            // Add a shadow effect for better visibility
+            button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.5)';
+            setTimeout(() => button.style.boxShadow = 'none', 200);
+        });
+
+        document.getElementById('yes-button').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            
+            // Show the congratulatory message
+            document.getElementById('congrats-message').style.display = 'block';
+            
+            // Hide the "No" button
+            document.getElementById('no-button').style.display = 'none';
+
+            // Hide the no-response message if it was visible
+            document.getElementById('no-response-message').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
