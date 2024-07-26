@@ -44,10 +44,10 @@
 
         .btn {
             margin-top: 30px;
-            position: relative;
             display: flex;
             justify-content: center;
             gap: 15px;
+            position: relative;
         }
 
         .btn a, .moving-btn {
@@ -71,12 +71,6 @@
 
         .btn a:hover, .moving-btn:hover {
             background-color: #0056b3;
-        }
-
-        .moving-btn {
-            position: absolute;
-            top: 0;
-            left: 100px; /* Align to the right of the Yes button */
         }
 
         .congratulatory-message {
@@ -115,11 +109,6 @@
                 font-size: 1.2em;
             }
 
-            .moving-btn {
-                top: 10px;
-                left: 10px;
-            }
-
             .congratulatory-message {
                 font-size: 1.2em;
             }
@@ -150,13 +139,14 @@
         </div>
 
         <div class="no-response" id="no-response-message">
-            <p>No! I’m not letting you go away! 😠</p>
+            <p>No! I'm holding on tight because you mean so much to me!</p>
         </div>
 
         <div class="tenor-embed">
             <img src="gif1.gif" alt="Manja Sticker">
         </div>
     </div>
+
     <script>
         // Array of playful "No" responses
         const noResponses = [
@@ -171,11 +161,16 @@
 
         // Array of predefined positions
         const predefinedPositions = [
-            { top: '0px', left: '100px' },
-            { top: '100px', left: '200px' },
-            { top: '200px', left: '300px' },
-            { top: '300px', left: '400px' },
-            { top: '400px', left: '500px' },
+            { top: '50px', left: '150px' },
+            { top: '150px', left: '250px' },
+            { top: '250px', left: '350px' },
+            { top: '350px', left: '450px' },
+            { top: '450px', left: '550px' },
+            { top: '100px', left: '300px' },
+            { top: '200px', left: '100px' },
+            { top: '300px', left: '200px' },
+            { top: '400px', left: '300px' },
+            { top: '200px', left: '400px' },
         ];
 
         function getRandomPosition() {
@@ -183,11 +178,29 @@
             return predefinedPositions[index];
         }
 
+        function isElementOverlapping(el, rect) {
+            const elemRect = el.getBoundingClientRect();
+            return !(elemRect.right < rect.left ||
+                elemRect.left > rect.right ||
+                elemRect.bottom < rect.top ||
+                elemRect.top > rect.bottom);
+        }
+
         document.getElementById('no-button').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default link behavior
             
             const button = this;
-            const newPosition = getRandomPosition();
+            const containerRect = document.querySelector('.container').getBoundingClientRect();
+            let newPosition;
+            
+            do {
+                newPosition = getRandomPosition();
+            } while (isElementOverlapping(button, {
+                left: parseInt(newPosition.left),
+                top: parseInt(newPosition.top),
+                right: parseInt(newPosition.left) + button.offsetWidth,
+                bottom: parseInt(newPosition.top) + button.offsetHeight
+            }));
             
             button.style.left = newPosition.left;
             button.style.top = newPosition.top;
@@ -209,6 +222,9 @@
         document.getElementById('yes-button').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default link behavior
             
+            // Hide the initial GIF
+            document.querySelector('.tenor-embed img').style.display = 'none';
+
             // Show the congratulatory message and new GIF
             document.getElementById('congrats-message').style.display = 'block';
             document.querySelector('.gif-display').style.display = 'block';
@@ -218,10 +234,6 @@
 
             // Hide the no-response message if it was visible
             document.getElementById('no-response-message').style.display = 'none';
-
-            // Hide the initial GIF
-            const initialGif = document.querySelector('.tenor-embed img');
-            if (initialGif) initialGif.style.display = 'none';
         });
 
         // Hide the initial GIF when the page loads
