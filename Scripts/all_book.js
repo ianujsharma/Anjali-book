@@ -33,14 +33,14 @@
             // Placeholder for actual search logic
             // Dummy data for now as this will be handled by the server, afterward.***
             const allResults = [
-                { title: "Reading is A Novel Idea!", content: "1", image: "images/post1.jpg", href: "post1.html", tags: ["novel"] },
-                { title: "Let's dive deep- me!", content: "2", image: "images/post1.jpg", href: "post1.1.html", tags: ["novel"] },
-                { title: "Understanding the World", content: "3", image: "images/post2.jpg", href: "post2.html", tags: ["finance", "tag2"] },
-                { title: "Understanding the World -Academic", content: "4", image: "images/post2.jpg", href: "post2.1.html", tags: ["finance", "tag2"] },
-                { title: "Answering Why?", content: "5", image: "images/post3.jpg", href: "post3.html", tags: ["science", "tag3"] },
-                { title: "Beyond This Realm!", content: "6", image: "images/post4.jpg", href: "post4.html", tags: ["fiction", "tag4"] },
-                { title: "Beyond The Horizon!", content: "7", image: "images/post7.jpg", href: "post5.html", tags: ["other", "tag5"] },
-                { title: "Let's Think About It", content: "8", image: "images/post6.jpg", href: "post6.html", tags: ["you", "tag6"] },
+                { title: "Reading is A Novel Idea!", content: "1", image: "images/post1.jpg", href: "post1", tags: ["novel"] },
+                { title: "Let's dive deep- me!", content: "2", image: "images/post1.jpg", href: "post1.1", tags: ["novel"] },
+                { title: "Understanding the World", content: "3", image: "images/post2.jpg", href: "post2", tags: ["finance", "tag2"] },
+                { title: "Understanding the World -Academic", content: "4", image: "images/post2.jpg", href: "post2.1", tags: ["finance", "tag2"] },
+                { title: "Answering Why?", content: "5", image: "images/post3.jpg", href: "post3", tags: ["science", "tag3"] },
+                { title: "Beyond This Realm!", content: "6", image: "images/post4.jpg", href: "post4", tags: ["fiction", "tag4"] },
+                { title: "Beyond The Horizon!", content: "7", image: "images/post7.jpg", href: "post5", tags: ["other", "tag5"] },
+                { title: "Let's Think About It", content: "8", image: "images/post6.jpg", href: "post6", tags: ["you", "tag6"] },
 
 
 
